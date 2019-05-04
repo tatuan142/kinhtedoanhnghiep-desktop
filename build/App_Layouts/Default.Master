@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="ePi.CMS.Web.App_Layouts.Default" EnableViewState="false" %>
+
+<%@ Import Namespace="ePi.CMS.Engine" %>
+<%@ Register Src="/UserControls/Header.ascx" TagName="Header" TagPrefix="uc5" %>
+<%@ Register Src="/UserControls/Footer.ascx" TagName="Footer" TagPrefix="uc5" %>
+<%@ Register Src="/UserControls/ucFloatingAds.ascx" TagName="ucFloatingAds" TagPrefix="uc5" %>
+<%@ Register Src="/UserControls/Skins/AdsTop.ascx" TagPrefix="uc1" TagName="AdsTop" %>
+<%@ Register Src="/UserControls/Skins/AdsHome.ascx" TagPrefix="uc1" TagName="AdsHome" %>
+<!DOCTYPE html>
+<html>
+
+<head runat="server" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <title>Tạp chí Mặt trận Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%-- <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/mobileswitcher.js?v=2016.22"></script>--%>
+    <meta name="description" id="description" runat="server" content="Tạp chí mặt trận, mặt trận, mặt trận tổ quốc Việt nam" />
+    <meta name="keywords" id="keywords" runat="server" content="Tạp chí mặt trận, tạp chí mặt trận online, mặt trận, mặt trận tổ quốc Việt nam" />
+    <meta name="news_keywords" runat="server" content="Tạp chí mặt trận, tạp chí mặt trận online, mặt trận, mặt trận tổ quốc Việt nam" />
+    <link href="http://tapchimattran.vn" rel="publisher" />
+    <link rel="alternate" href="/rss/home.rss" type="application/rss+xml" title="RSS" />
+    <link rel="shortcut icon" href="/fav.ico" type="image/x-icon" />
+    <meta http-equiv="refresh" content="900" />
+    <meta name='robots' content='INDEX,FOLLOW' id="robots" runat="server" />
+
+    <link rel="stylesheet" type="text/css" href="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/css/news.min.css">
+    <!--[if lt IE 9]>
+        <script src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/modernizr.js"></script>
+        <script src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/respond.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript"> var host = 'http://<%= ConfigValues.Host %>';</script>
+    <script type="text/javascript"> var loghost = 'http://log.tapchimattran.vn';</script>
+    <script src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/vendor/jquery-1.10.2.min.js"></script>    
+    <%--   <script src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/news.min.js" defer></script>--%>
+   <script src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/vendor/bootstrap.min.js"></script>
+    <script src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/vendor/jquery.bxslider-4.1.2/jquery.bxslider.min.js"></script>
+   <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/JScripts/jquery.scrollbar.js"></script>
+    <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/JScripts/main.js?v=2016.79"></script>
+    <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/JScripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/jscripts/jquery.cookie.js?v=2014"></script>
+    <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/comment.js?68"></script>
+    <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/JScripts/jquery.bpopup-0.9.3.min.js"></script>
+    <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/JScripts/swfobject.js"></script>
+    <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/ui.js?2016.226"></script>
+    <script type="text/javascript" src="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/Jscripts/log.js?v=2016.44"></script>
+    <script type="text/javascript">logging('<%= UrlFilter.CurContentID %>', '<%= UrlFilter.CurZoneID%>', 1);</script>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <link rel="stylesheet" href="<%=ConfigurationManager.AppSettings["StaticHost"] %>/webthemes/css/ext.css?v=2.688" />
+
+    <%-- <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments);
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g;
+            m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-78192710-1', 'auto'); ga('send', 'pageview');
+    </script>
+
+    <meta property="fb:app_id" content="186278641775576" />--%>
+</head>
+<body class="elements-page">
+    <form id="form1" runat="server">
+        <div id="fb-root"></div>
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    //appId: '186278641775576',
+                    xfbml: true,
+                    version: 'v2.7'
+                });
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/vn_VN/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <uc5:Header ID="Header1" runat="server" />
+        <main>
+            <asp:ContentPlaceHolder ID="mainContent" runat="server" />
+        </main>
+        <uc5:Footer ID="Footer1" runat="server" />
+        <uc5:ucFloatingAds ID="ucFloatingAds1" runat="server" />
+    </form>
+</body>
+</html>
